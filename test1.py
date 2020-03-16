@@ -33,5 +33,9 @@ driver.maximize_window()
 #driver.switch_to.alert.dismiss()
 
 #driver.find_element_by_name("username").send_keys(Keys.BACK_SPACE)
-driver.find_element_by_name("password").send_keys(Keys.ENTER)
+#driver.find_element_by_name("password").send_keys(Keys.ENTER)
 
+auto_select = Select(driver.find_element_by_tag_name("select"))
+auto_select.select_by_visible_text("Volvo")
+auto_select.select_by_value("saab")
+auto_select.select_by_index(0)
