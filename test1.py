@@ -4,7 +4,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 from webdriver_manager.chrome import ChromeDriverManager
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome(executable_path=r'C:\Users\Lydyjka\.wdm\drivers\chromedriver\80.0.3987.106\win32\chromedriver.exe')
+#driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get("file:///C:/Users/Lydyjka/Desktop/selenium_kurs_udemy/Test.html")
 driver.maximize_window()
 #driver.find_element_by_id("newPage").click()
@@ -26,8 +27,11 @@ driver.maximize_window()
 #driver.find_element_by_xpath("//th[text()='Month']")
 #driver.find_element_by_xpath("//button[@id='clickOnMe']")
 #driver.find_element_by_xpath("//input[@name='fname']/following-sibling::table")
-driver. find_element_by_id("clickOnMe").click()
-driver.switch_to.alert.accept()
-driver. find_element_by_id("clickOnMe").click()
-driver.switch_to.alert.dismiss()
+#driver. find_element_by_id("clickOnMe").click()
+#driver.switch_to.alert.accept()
+#driver. find_element_by_id("clickOnMe").click()
+#driver.switch_to.alert.dismiss()
+
+#driver.find_element_by_name("username").send_keys(Keys.BACK_SPACE)
+driver.find_element_by_name("password").send_keys(Keys.ENTER)
 
