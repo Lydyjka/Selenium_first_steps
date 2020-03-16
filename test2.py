@@ -4,7 +4,6 @@ driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get("https://www.seleniumeasy.com/test/basic-first-form-demo.html")
 driver.maximize_window()
 
-
 #cwiczenie: Single Input Field
 #driver.find_element_by_class_name("form-control").send_keys("test")
 #driver.find_element_by_xpath("//button[text()='Show Message']").click()
