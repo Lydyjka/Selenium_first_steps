@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 driver = webdriver.Chrome(executable_path=r'C:\Users\Lydyjka\.wdm\drivers\chromedriver\80.0.3987.106\win32\chromedriver.exe')
 #driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get("file:///C:/Users/Lydyjka/Desktop/selenium_kurs_udemy/Test.html")
-driver.maximize_window()
+#driver.maximize_window()
 #driver.find_element_by_id("newPage").click()
 #driver.close(_) #zamyka wszystkie okna na których był focus
 #driver.quit() #zamyka wszystkie okna
@@ -48,5 +48,17 @@ driver.maximize_window()
 #driver.find_element_by_id("fname").send_keys("Lydyjka")
 #print("Element text: " + driver.find_element_by_id("fname").get_attribute("value"))
 
-print(driver.find_element_by_id("smileImage").size.get("height"))
-print(driver.find_element_by_id("smileImage").get_attribute("naturalHeight"))
+#print(driver.find_element_by_id("smileImage").size.get("height"))
+#print(driver.find_element_by_id("smileImage").get_attribute("naturalHeight"))
+
+driver.find_element_by_id("newPage").click()
+print(driver.title)
+
+current_window_name = driver.current_window_handle
+all_windows = driver.window_handles
+
+for window in all_windows:
+    if window != current_window_name:
+        driver.switch_to.window(window)
+
+print(driver.title)
