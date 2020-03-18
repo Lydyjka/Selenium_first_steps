@@ -6,4 +6,4 @@ driver.get("https://www.w3schools.com/")
 
 element = driver.find_element_by_id("navbtn_tutorials")
 
-webdriver.ActionChains(driver).move_to_element(element).perform()
+webdriver.ActionChains(driver).move_to_element(element).click(element).perform()
