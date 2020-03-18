@@ -6,4 +6,6 @@ driver.get("file:///C:/Users/Lydyjka/Desktop/selenium_kurs_udemy/DoubleClick.htm
 
 button = driver.find_element_by_id("bottom")
 
-webdriver.ActionChains(driver).double_click(button).perform()
+# webdriver.ActionChains(driver).double_click(button).perform()
+
+webdriver.ActionChains(driver).context_click(button).perform()
