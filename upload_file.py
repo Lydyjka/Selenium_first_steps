@@ -9,4 +9,6 @@ driver.get("file:///C:/Users/Lydyjka/Desktop/selenium_kurs_udemy/FileUpload.html
 upload_input = driver.find_element_by_id("myFile")
 path = os.path.abspath("upload.txt")
 
+driver.save_screenshot("screenshots/before_upload.png")
 upload_input.send_keys(path)
+driver.save_screenshot("screenshots/after_upload.png")
