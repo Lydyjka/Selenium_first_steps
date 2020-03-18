@@ -64,3 +64,7 @@ driver.get("file:///C:/Users/Lydyjka/Desktop/selenium_kurs_udemy/Test.html")
 # print(driver.title)
 # driver.switch_to.window(current_window_name)
 # print(driver.title)
+
+username_input = driver.find_element_by_name("username")
+username_input.clear()
+username_input.send_keys("Lydyjka")
