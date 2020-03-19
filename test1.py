@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
@@ -77,10 +78,22 @@ driver.get("file:///C:/Users/Lydyjka/Desktop/selenium_kurs_udemy/Test.html")
 #     print("Element nie jest dostepny")
 
 
-hidden_element = driver.find_element_by_tag_name("p")
+# hidden_element = driver.find_element_by_tag_name("p")
 
-if hidden_element.is_displayed():
-    print(hidden_element.text)
+# if hidden_element.is_displayed():
+#     print(hidden_element.text)
+# else:
+#     print("Element nie jest widoczny na stronie")
+#     print(hidden_element.get_attribute("textContent"))
+
+elements = driver.find_elements_by_tag_name("p")
+
+if len(elements) > 0:
+    print("Element istnieje na stronie")
 else:
-    print("Element nie jest widoczny na stronie")
-    print(hidden_element.get_attribute("textContent"))
+    print("Element nie istnieje")
+
+try:
+    driver.find_element_by_tag_name("papa")
+except NoSuchElementException:
+    print("Element nie istnieje")
