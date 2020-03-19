@@ -31,10 +31,10 @@ driver.get("file:///C:/Users/Lydyjka/Desktop/selenium_kurs_udemy/Test.html")
 # driver.switch_to.alert.accept()
 # driver. find_element_by_id("clickOnMe").click()
 # driver.switch_to.alert.dismiss()
-#
+
 # driver.find_element_by_name("username").send_keys(Keys.BACK_SPACE)
 # driver.find_element_by_name("password").send_keys(Keys.ENTER)
-#
+
 # auto_select = Select(driver.find_element_by_tag_name("select"))
 # auto_select.select_by_visible_text("Volvo")
 # auto_select.select_by_value("saab")
@@ -47,20 +47,20 @@ driver.get("file:///C:/Users/Lydyjka/Desktop/selenium_kurs_udemy/Test.html")
 # print(driver.find_element_by_tag_name("p").get_attribute("textContent"))
 # driver.find_element_by_id("fname").send_keys("Lydyjka")
 # print("Element text: " + driver.find_element_by_id("fname").get_attribute("value"))
-#
+
 # print(driver.find_element_by_id("smileImage").size.get("height"))
 # print(driver.find_element_by_id("smileImage").get_attribute("naturalHeight"))
 
 # driver.find_element_by_id("newPage").click()
 # print(driver.title)
-#
+
 # current_window_name = driver.current_window_handle
 # all_windows = driver.window_handles
-#
+
 # for window in all_windows:
 #     if window != current_window_name:
 #         driver.switch_to.window(window)
-#
+
 # print(driver.title)
 # driver.switch_to.window(current_window_name)
 # print(driver.title)
@@ -69,9 +69,18 @@ driver.get("file:///C:/Users/Lydyjka/Desktop/selenium_kurs_udemy/Test.html")
 # username_input.clear()
 # username_input.send_keys("Lydyjka")
 
-first_name_input = driver.find_element_by_id("fname")
+# first_name_input = driver.find_element_by_id("fname")
+#
+# if first_name_input.is_enabled():
+#     first_name_input.send_keys("Lydyjka")
+# else:
+#     print("Element nie jest dostepny")
 
-if first_name_input.is_enabled():
-    first_name_input.send_keys("Lydyjka")
+
+hidden_element = driver.find_element_by_tag_name("p")
+
+if hidden_element.is_displayed():
+    print(hidden_element.text)
 else:
-    print("Element nie jest dostepny")
+    print("Element nie jest widoczny na stronie")
+    print(hidden_element.get_attribute("textContent"))
