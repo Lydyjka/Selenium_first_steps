@@ -86,14 +86,25 @@ driver.get("file:///C:/Users/Lydyjka/Desktop/selenium_kurs_udemy/Test.html")
 #     print("Element nie jest widoczny na stronie")
 #     print(hidden_element.get_attribute("textContent"))
 
-elements = driver.find_elements_by_tag_name("p")
+# elements = driver.find_elements_by_tag_name("p")
+#
+# if len(elements) > 0:
+#     print("Element istnieje na stronie")
+# else:
+#     print("Element nie istnieje")
+#
+# try:
+#     driver.find_element_by_tag_name("papa")
+# except NoSuchElementException:
+#     print("Element nie istnieje")
 
-if len(elements) > 0:
-    print("Element istnieje na stronie")
+checkbox = driver.find_element_by_xpath("//input[@type='checkbox']")
+
+checkbox.click()
+
+if checkbox.is_selected():
+    print("Wartość zaznaczona. Odzanaczam!")
+    checkbox.click()
 else:
-    print("Element nie istnieje")
-
-try:
-    driver.find_element_by_tag_name("papa")
-except NoSuchElementException:
-    print("Element nie istnieje")
+    print("Zaznaczam wartość")
+    checkbox.click()
